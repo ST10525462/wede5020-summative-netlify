@@ -1,0 +1,594 @@
+/* ==========================================================================
+   Import Google Fonts (Modern, Crisp Typography)
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ==========================================================================
+   Global Reset & Base Styles
+   Reference: MDN Web Docs, 2026. CSS Box Sizing. [online] 
+   Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing 
+   [Accessed 20 August 2026].
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("../_images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #2d3748;
+}
+
+/* Base Typography Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Highlight Tag */
+mark {
+  background: linear-gradient(120deg, #fff3bf 0%, #ffe066 100%);
+  color: #1a252f;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Gradient Header & Navigation Menu
+   Reference: W3C, 2026. CSS Images Module Level 3 - Radial Gradients. [online]
+   Available at: https://www.w3.org/TR/css-images-3/#radial-gradients
+   [Accessed 20 August 2026]. 
+   ========================================================================== */
+header {
+  background: radial-gradient(
+    circle at center,
+    #52b788 0%,
+    #2a9d8f 50%,
+    #1b4332 100%
+  );
+  color: #ffffff;
+  padding: 35px 20px 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 25px rgba(42, 157, 143, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #d8f3dc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p em {
+  font-style: normal;
+  color: #d8f3dc;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+header hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  margin: 18px auto;
+  width: 50%;
+}
+
+/* Flexbox Navigation Layout */
+/* Reference: MDN Web Docs, 2026. Basic concepts of flexbox. [online]
+   Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox
+   [Accessed 20 August 2026]. */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
+  max-width: fit-content;
+  margin: 0 auto 15px auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav img {
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-right: 6px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+/* Highlighted Crisis Navigation Link Button */
+nav a.nav-crisis-btn {
+  background: linear-gradient(135deg, #d90429 0%, #ef233c 100%);
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(217, 4, 41, 0.3);
+}
+
+nav a.nav-crisis-btn:hover {
+  background: linear-gradient(135deg, #ef233c 0%, #d90429 100%);
+  box-shadow: 0 4px 14px rgba(217, 4, 41, 0.45);
+}
+
+/* ==========================================================================
+   Layout Containers & Card Components
+   Reference: W3Schools, 2026. CSS Card Design Guidelines. [online]
+   Available at: https://www.w3schools.com/howto/howto_css_cards.asp
+   [Accessed 20 August 2026].
+   ========================================================================== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+main.about-main {
+  max-width: 1250px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background: #f0faf4db;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d1e7dd;
+  border-top: 4px solid #0a9396;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Leaflet Map Styling (Simple, Matches Original iframe Dimensions) */
+.leaflet-map-frame {
+  width: 470px;
+  max-width: 100%;
+  height: 350px;
+  border-radius: 8px;
+  border: 0;
+}
+
+.leaflet-map-frame.full-map {
+  width: 100%;
+  height: 300px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px -5px rgba(0, 0, 0, 0.1);
+  border-color: rgba(10, 147, 150, 0.3);
+}
+
+/* Urgent Crisis Card Modification */
+.card.crisis-card {
+  border-top-color: #d90429;
+}
+
+.card h2,
+.card h3 {
+  color: #005f73;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.card.crisis-card h2,
+.card.crisis-card h3 {
+  color: #d90429;
+}
+
+/* Card Lists */
+.card ul {
+  padding-left: 20px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* Grid Layout for Services Page */
+/* Reference: W3C, 2026. CSS Grid Layout Module Level 1. [online]
+   Available at: https://www.w3.org/TR/css-grid-1/
+   [Accessed 20 August 2026]. */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.services-grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   About Us Page Structure
+   ========================================================================== */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Top Combined Story Card */
+.story-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.about-image {
+  flex: 0 0 40%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.story-content {
+  flex: 1;
+}
+
+/* Bottom Grid Layout for Mission/Vision & Team */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Two equal side-by-side columns */
+  gap: 24px;
+}
+
+.mission-vision-card h3,
+.team-card h3 {
+  color: #005f73;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.team-image {
+  flex: 0 0 40%;
+}
+
+.team-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Form Controls & Button Styles
+   Reference: MDN Web Docs, 2026. Styling Web Forms. [online]
+   Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms
+   [Accessed 20 August 2026].
+   ========================================================================== */
+form p {
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 11px 14px;
+  margin-top: 6px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #f8fafc;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0a9396;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.2);
+}
+
+button,
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #005f73 0%, #0a9396 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(10, 147, 150, 0.25);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover,
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(10, 147, 150, 0.35);
+}
+
+/* Emergency Callout Red Button Class */
+a.btn-danger,
+button.btn-danger,
+.btn-danger {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #d90429 0%, #ef233c 100%);
+  color: #ffffff !important;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(217, 4, 41, 0.35);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 10px;
+}
+
+a.btn-danger:hover,
+button.btn-danger:hover,
+.btn-danger:hover {
+  background: linear-gradient(135deg, #ef233c 0%, #d90429 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 4, 41, 0.5);
+  color: #ffffff !important;
+}
+
+/* Inline Form Error Styling */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.input-error {
+  border-color: #d90429 !important;
+  background-color: #fff0f3 !important;
+  box-shadow: 0 0 0 3px rgba(217, 4, 41, 0.15) !important;
+}
+
+.error-message {
+  color: #d90429;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Success Confirmation Screen Card */
+.success-card {
+  display: none;
+  background: #e8f5e9;
+  border: 2px solid #2e7d32;
+  border-radius: 16px;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-card h3 {
+  color: #1b5e20;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.success-card p {
+  color: #2e7d32;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.success-details {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+  border: 1px solid #c8e6c9;
+}
+
+.success-details p {
+  color: #1b252f;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Multi-Column Site Footer Component
+   Reference: GeeksforGeeks, 2026. Creating Modern Footers using CSS Flexbox. [online]
+   Available at: https://www.geeksforgeeks.org/how-to-create-a-footer-using-html-and-css/
+   [Accessed 20 August 2026].
+   ========================================================================== */
+footer {
+  background: #1a252f;
+  color: #a0aec0;
+  padding: 50px 20px 25px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #2d3748;
+}
+
+.footer-brand {
+  flex: 1 1 300px;
+}
+
+.footer-brand h4 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  flex: 1 1 200px;
+}
+
+.footer-links h5 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-links a:hover {
+  color: #94d2bd;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Responsive Image Auto-Scaling & Media Query Breakpoints
+   Reference: MDN Web Docs, 2026. Using Media Queries. [online]
+   Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+   [Accessed 20 August 2026].
+   ========================================================================== */
+
+/* Universal Responsive Image Scaling */
+img,
+.card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Tablet & Mobile Layout Adaptations */
+@media (max-width: 768px) {
+  .story-card {
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

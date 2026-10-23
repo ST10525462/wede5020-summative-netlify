@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Matters Foundation | 24/7 Crisis Support &amp; Helplines</title>
+
+    <!-- ======================================================================
+       META TAGS & OPEN GRAPH ATTRIBUTION
+       Reference: MDN Web Docs, 2026. What is a meta tag? - HTML: HyperText 
+       Markup Language. [online] Available at: 
+       https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML 
+       [Accessed 15 October 2026].
+       Open Graph Protocol, 2026. A protocol for integrating social media 
+       metadata into web pages. [online] Available at: https://ogp.me/ 
+       [Accessed 15 October 2026].
+       ====================================================================== -->
+    <meta
+      name="description"
+      content="Immediate 24/7 toll-free crisis helplines, suicide prevention hotlines, and confidential callback support in South Africa."
+    />
+    <meta
+      name="keywords"
+      content="crisis helpline, SADAG, suicide prevention, substance abuse hotline, mental health emergency"
+    />
+    <link
+      rel="canonical"
+      href="https://jordan-naidoo-mind-matters.netlify.app/crisis.html"
+    />
+
+    <!-- Open Graph Social Share Tags -->
+    <meta
+      property="og:title"
+      content="Mind Matters Foundation | 24/7 Crisis Helplines"
+    />
+    <meta
+      property="og:description"
+      content="Get immediate, confidential emergency support in South Africa."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- External CSS Stylesheet Reference -->
+    <link rel="stylesheet" href="_css-assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Site Header Container -->
+    <header>
+      <!-- Primary Navigation Bar -->
+      <!-- Reference: W3C, 2026. HTML Semantic Elements - <nav> Usage. [online] Available at: https://www.w3.org/TR/html52/sections.html#the-nav-element [Accessed 20 August 2026]. -->
+      <nav>
+        <img
+          src="_images/logo.jpeg"
+          alt="Mind Matters Foundation Logo"
+          width="30"
+        />
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="crisis.html" class="nav-crisis-btn">Crisis Contact</a>
+        <a href="enquiry.html">Get Involved</a>
+        <a href="contact.html"><strong>Contact Us</strong></a>
+      </nav>
+
+      <!-- Main Heading Banner -->
+      <h1>Mind Matters Foundation</h1>
+      <hr />
+      <p><em>Empowering Youth, Restoring Hope</em></p>
+    </header>
+
+    <!-- Main Content Area: Support Center Locations and Interactive Maps -->
+    <!-- Reference: MDN Web Docs, 2026. <main>: The Main Content element. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main [Accessed 20 August 2026]. -->
+    <main>
+      <h2>Contact &amp; Support Centres</h2>
+      <br />
+
+      <!-- Contact Form Section -->
+      <!-- Reference: MDN Web Docs, 2026. HTML Forms: Building Accessible Forms. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_structure_a_web_form [Accessed 20 August 2026]. -->
+      <section class="card">
+        <h3>📩 Send Us a Message</h3>
+        <p>
+          Have a general question or message? Fill in the details below to reach
+          our admin office.
+        </p>
+        <br />
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Your Full Name:</label><br />
+            <input
+              type="text"
+              id="contact-name"
+              name="contact_name"
+              placeholder="Jordan Hayley Naidoo"
+            />
+            <span class="error-message" id="contact-name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Your Email Address:</label><br />
+            <input
+              type="email"
+              id="contact-email"
+              name="contact_email"
+              placeholder="name@example.com"
+            />
+            <span class="error-message" id="contact-email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone">Phone Number:</label><br />
+            <input
+              type="tel"
+              id="contact-phone"
+              name="contact_phone"
+              placeholder="e.g., 0821234567"
+            />
+            <span class="error-message" id="contact-phone-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Inquiry Subject / Category:</label
+            ><br />
+            <select id="contact-subject" name="contact_subject">
+              <option value="">-- Select Category --</option>
+              <option value="general">General Inquiry</option>
+              <option value="feedback">Community Feedback</option>
+              <option value="media">Media &amp; Public Relations</option>
+            </select>
+            <span class="error-message" id="contact-subject-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Full Message:</label><br />
+            <textarea
+              id="contact-message"
+              name="contact_message"
+              rows="5"
+              placeholder="Type your message here..."
+            ></textarea>
+            <span class="error-message" id="contact-message-error"></span>
+          </div>
+
+          <p>
+            <button type="submit">Send Message</button>
+          </p>
+        </form>
+      </section>
+
+      <!-- Prominent Mailto Direct Email Card -->
+      <section class="card" style="text-align: center">
+        <h3>📧 Prefer to Email Us Directly?</h3>
+        <p>
+          Click the button below to open your default email app and send a
+          direct message to our support team.
+        </p>
+        <br />
+        <a
+          href="mailto:support@mindmatters.org.za?subject=Support%20Inquiry%20-%20Mind%20Matters"
+          class="btn-primary"
+          >Email support@mindmatters.org.za</a
+        >
+      </section>
+
+      <br />
+
+      <!-- Contact Success Screen -->
+      <div class="success-card" id="contact-success-card">
+        <h3>✉️ Message Dispatched!</h3>
+        <p>
+          Thank you for getting in touch with
+          <strong>Mind Matters Foundation</strong>.
+        </p>
+
+        <div class="success-details">
+          <p><strong>Tracking Ticket:</strong> <span id="c-res-ref"></span></p>
+          <p><strong>Sender:</strong> <span id="c-res-name"></span></p>
+          <p><strong>Sender Email:</strong> <span id="c-res-email"></span></p>
+          <p><strong>Category:</strong> <span id="c-res-subject"></span></p>
+        </div>
+
+        <p>
+          Our administration team will reply to your email within 24–48 working
+          hours.
+        </p>
+        <br />
+        <a href="contact.html" class="btn-primary">Send Another Message</a>
+      </div>
+
+      <br />
+
+      <!-- Hub 1: Main Support Hub Details Card -->
+      <section class="card">
+        <h3>📍 Durban Central Support Hub</h3>
+        <p>
+          <strong>🏠 Address:</strong> 5th Exemouth Ave, Durban Central, Durban,
+          4001
+        </p>
+        <p><strong>📞 Phone:</strong> +27 (0)31 555 0192</p>
+        <p>
+          <strong>📧 Email:</strong>
+          <a href="mailto:durban.central@mindmatters.org.za"
+            >durban.central@mindmatters.org.za</a
+          >
+        </p>
+        <p><strong>🕖 Hours:</strong> Mon - Fri: 08:00 - 16:30</p>
+        <br />
+        <div id="map-durban" class="leaflet-map-frame"></div>
+      </section>
+
+      <br />
+
+      <!-- Hub 2: Youth Outreach Centre Details Card -->
+      <section class="card">
+        <h3>📍 Youth Outreach Centre</h3>
+        <p>
+          <strong>🏠 Address:</strong> Erf 1367 Isilo Street, Quarry Heights Dr,
+          Durban North, Durban, 4051
+        </p>
+        <p><strong>📞 Phone:</strong> +27 (0)31 555 0198</p>
+        <p>
+          <strong>📧 Email:</strong>
+          <a href="mailto:youth.outreach@mindmatters.org.za"
+            >youth.outreach@mindmatters.org.za</a
+          >
+        </p>
+        <p><strong>🕖 Hours:</strong> Tue - Sat: 09:00 - 17:00</p>
+        <br />
+        <div id="map-outreach" class="leaflet-map-frame"></div>
+      </section>
+
+      <br />
+
+      <!-- Hub 3: Interactive Main Center Location Card -->
+      <!-- Reference: W3Schools, 2026. HTML Iframe Tag. [online] Available at: https://www.w3schools.com/tags/tag_iframe.asp [Accessed 20 August 2026]. -->
+      <section class="card">
+        <h3>📍 Our Main Center Location (Westville HQ)</h3>
+        <p><strong>🏠 Address:</strong> Westville, Durban, 3629</p>
+        <p><strong>📞 Phone:</strong> +27 (0)31 555 0100</p>
+        <p>
+          <strong>📧 Email:</strong>
+          <a href="mailto:hq@mindmatters.org.za">hq@mindmatters.org.za</a>
+        </p>
+        <p><strong>🕖 Hours:</strong> Mon - Fri: 08:00 - 17:00</p>
+        <br />
+        <div id="map-westville" class="leaflet-map-frame full-map"></div>
+      </section>
+    </main>
+
+    <!-- Site Footer Component -->
+    <!-- Reference: GeeksforGeeks, 2026. HTML5 Footer Element. [online] Available at: https://www.w3schools.com/html/html5_footer_tag/ [Accessed 20 August 2026]. -->
+    <footer>
+      <div class="footer-container">
+        <!-- Brand Summary Column -->
+        <div class="footer-brand">
+          <h4>Mind Matters Foundation</h4>
+          <p>
+            Empowering Youth, Restoring Hope through accessible peer support and
+            compassionate care.
+          </p>
+        </div>
+        <!-- Quick Links Column -->
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services &amp; Programs</a></li>
+            <li><a href="enquiry.html">Get Involved</a></li>
+          </ul>
+        </div>
+        <!-- Emergency Helplines Column -->
+        <div class="footer-links">
+          <h5>Support &amp; Crisis</h5>
+          <ul>
+            <li><a href="crisis.html">24/7 Emergency Helplines</a></li>
+            <li><a href="contact.html">Support Hub Locations</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Copyright Notice -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mind Matters Foundation. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Load Leaflet JavaScript Library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="_javascript/script.js" defer></script>
+  </body>
+</html>
+v

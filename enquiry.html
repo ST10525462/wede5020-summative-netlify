@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Matters Foundation | 24/7 Crisis Support &amp; Helplines</title>
+
+    <!-- ======================================================================
+       META TAGS & OPEN GRAPH ATTRIBUTION
+       Reference: MDN Web Docs, 2026. What is a meta tag? - HTML: HyperText 
+       Markup Language. [online] Available at: 
+       https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML 
+       [Accessed 15 October 2026].
+       Open Graph Protocol, 2026. A protocol for integrating social media 
+       metadata into web pages. [online] Available at: https://ogp.me/ 
+       [Accessed 15 October 2026].
+       ====================================================================== -->
+    <meta
+      name="description"
+      content="Immediate 24/7 toll-free crisis helplines, suicide prevention hotlines, and confidential callback support in South Africa."
+    />
+    <meta
+      name="keywords"
+      content="crisis helpline, SADAG, suicide prevention, substance abuse hotline, mental health emergency"
+    />
+    <link
+      rel="canonical"
+      href="https://jordan-naidoo-mind-matters.netlify.app/crisis.html"
+    />
+
+    <!-- Open Graph Social Share Tags -->
+    <meta
+      property="og:title"
+      content="Mind Matters Foundation | 24/7 Crisis Helplines"
+    />
+    <meta
+      property="og:description"
+      content="Get immediate, confidential emergency support in South Africa."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- External CSS Stylesheet Reference -->
+    <link rel="stylesheet" href="_css-assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Site Header Container -->
+    <header>
+      <!-- Navigation Bar -->
+      <!-- Reference: W3C, 2026. HTML Semantic Elements - <nav> Usage. [online] Available at: https://www.w3.org/TR/html52/sections.html#the-nav-element [Accessed 20 August 2026]. -->
+      <nav>
+        <img
+          src="_images/logo.jpeg"
+          alt="Mind Matters Foundation Logo"
+          width="30"
+        />
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="crisis.html" class="nav-crisis-btn">Crisis Contact</a>
+        <a href="enquiry.html"><strong>Get Involved</strong></a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <h1>Mind Matters Foundation</h1>
+      <hr />
+      <p><em>Empowering Youth, Restoring Hope</em></p>
+    </header>
+
+    <!-- Main Content Area: Community Partnership & General Inquiry -->
+    <main>
+      <h2>Get Involved</h2>
+      <br />
+
+      <!-- Section 1: Partnership Opportunities Card -->
+      <section class="card">
+        <h3>Ways to Partner with Us</h3>
+        <p>
+          Collaborate with us to make a lasting impact on youth mental health in
+          our communities.
+        </p>
+
+        <br />
+        <ul>
+          <li>
+            <strong>Volunteer Work:</strong> Help facilitate campus awareness
+            drives, support group administration, and community events.
+          </li>
+          <li>
+            <strong>Sponsorship &amp; Donations:</strong> Fund youth mental
+            health workshops, printed guides, and helpline resources.
+          </li>
+          <li>
+            <strong>General Enquiries:</strong> Connect with our team regarding
+            partnerships, research, or public talks.
+          </li>
+        </ul>
+        <br />
+        <img
+          src="_images/partnership.avif"
+          alt="Community Partnership"
+          width="470"
+        />
+      </section>
+
+      <!-- Section 2: Enquiry Form Card -->
+      <!-- Reference: MDN Web Docs, 2026. HTML Forms: Building Accessible Forms. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_structure_a_web_form [Accessed 20 August 2026]. -->
+      <section class="card">
+        <h3>Submit an Enquiry</h3>
+        <p>
+          Fill out all required fields below and our team will process your
+          request.
+        </p>
+        <br />
+
+        <form id="enquiryForm" novalidate>
+          <div class="form-group">
+            <label for="fullname">Full Name:</label><br />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Jordan Hayley Naidoo"
+            />
+            <span class="error-message" id="fullname-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+            />
+            <span class="error-message" id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number:</label><br />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g., 0821234567"
+            />
+            <span class="error-message" id="phone-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="enquiry-type">Reason for Enquiry / Involvement:</label
+            ><br />
+            <select id="enquiry-type" name="enquiry_type">
+              <option value="">-- Select Option --</option>
+              <option value="volunteer">Apply as a Volunteer</option>
+              <option value="sponsor">Become a Sponsor / Partner</option>
+              <option value="general">General Information Enquiry</option>
+            </select>
+            <span class="error-message" id="enquiry-type-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label><br />
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="How can we assist you?"
+            ></textarea>
+            <span class="error-message" id="message-error"></span>
+          </div>
+
+          <p>
+            <button type="submit">Submit Enquiry</button>
+          </p>
+        </form>
+      </section>
+
+      <!-- Success Confirmation Screen -->
+      <div class="success-card" id="enquiry-success-card">
+        <h3>🎉 Submission Received!</h3>
+        <p>
+          Thank you for reaching out to
+          <strong>Mind Matters Foundation</strong>.
+        </p>
+
+        <div class="success-details">
+          <p><strong>Reference Number:</strong> <span id="res-ref"></span></p>
+          <p><strong>Applicant Name:</strong> <span id="res-name"></span></p>
+          <p><strong>Enquiry Category:</strong> <span id="res-type"></span></p>
+          <p>
+            <strong>Financial / Fee Aspect:</strong> <span id="res-cost"></span>
+          </p>
+          <p>
+            <strong>Expected Availability:</strong> <span id="res-avail"></span>
+          </p>
+          <p>
+            <strong>Confirmation Email Sent To:</strong>
+            <span id="res-email"></span>
+          </p>
+        </div>
+
+        <p>
+          A coordinator will contact you shortly to follow up on your request.
+        </p>
+        <br />
+        <a href="enquiry.html" class="btn-primary">Submit Another Request</a>
+      </div>
+    </main>
+
+    <!-- Site Footer Component -->
+    <!-- Reference: GeeksforGeeks, 2026. HTML5 Footer Element. [online] Available at: https://www.geeksforgeeks.org/html5-footer-tag/ [Accessed 20 August 2026]. -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h4>Mind Matters Foundation</h4>
+          <p>
+            Empowering Youth, Restoring Hope through accessible peer support and
+            compassionate care.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services &amp; Programs</a></li>
+            <li><a href="enquiry.html">Get Involved</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Support &amp; Crisis</h5>
+          <ul>
+            <li><a href="crisis.html">24/7 Emergency Helplines</a></li>
+            <li><a href="contact.html">Support Hub Locations</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mind Matters Foundation. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
