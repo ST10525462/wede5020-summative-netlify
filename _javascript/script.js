@@ -1,6 +1,7 @@
 /* ==========================================================================
    Mind Matters Foundation — Global Interactive Script & DOM Controller (Part 3)
    References & Attributions:
+   - IIE WEDE5020 Lecturer Campus Explorer Template, 2026.
    - MDN Web Docs, 2026. Introduction to client-side web APIs and form validation. 
      Available at: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs 
      [Accessed 15 October 2026].
@@ -31,53 +32,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ======================================================================
-       1. Interactive Leaflet Map Initialization (`contact.html`)
-       Reference: Leaflet, 2026. OpenStreetMap integration & Lecturer Guide.
+       1. INTERACTIVE LEAFLET MAPS (`contact.html`)
+       Modeled exactly after the Lecturer's Campus Explorer Guide
        ====================================================================== */
-    if (typeof L === "undefined") {
-        console.error("Leaflet could not be loaded. Check your internet connection and script URL.");
-    } else {
-        // Hub 1: Durban Central Support Hub Map
-        const durbanEl = document.getElementById("map-durban");
-        if (durbanEl) {
-            const durbanLocation = [-29.8579, 31.0113];
-            const durbanMap = L.map("map-durban").setView(durbanLocation, 14);
+
+    // --- MAP 1: Durban Central Support Hub ---
+    const mapDurbanElement = document.getElementById("map-durban");
+    if (mapDurbanElement) {
+        if (typeof L === "undefined") {
+            console.error("Leaflet could not be loaded. Check your internet connection and script URL.");
+        } else {
+            // STEP 1: Set the location coordinates [latitude, longitude]
+            const selectedLocation = [-29.8587, 31.0218];
+
+            // STEP 2: Create the map and set starting zoom level
+            const map = L.map("map-durban").setView(selectedLocation, 14);
+
+            // STEP 3: Add OpenStreetMap tile layer imagery
             L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19,
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(durbanMap);
+            }).addTo(map);
 
-            L.marker(durbanLocation).addTo(durbanMap)
-                .bindPopup("<strong>Durban Central Support Hub</strong><br>5th Exemouth Ave, Durban Central, 4001<br>Phone: +27 (0)31 555 0192")
-                .openPopup();
+            // STEP 4: Add marker and popup details
+            L.marker(selectedLocation)
+                .addTo(map)
+                .bindPopup("<strong>Durban Central Support Hub</strong><br>5th Exemouth Ave, Durban Central, Durban, 4001<br>Phone: +27 (0)31 555 0192");
         }
+    }
 
-        // Hub 2: Youth Outreach Centre Map
-        const outreachEl = document.getElementById("map-outreach");
-        if (outreachEl) {
-            const outreachLocation = [-29.7789, 30.9876];
-            const outreachMap = L.map("map-outreach").setView(outreachLocation, 14);
+    // --- MAP 2: Youth Outreach Centre ---
+    const mapOutreachElement = document.getElementById("map-outreach");
+    if (mapOutreachElement) {
+        if (typeof L === "undefined") {
+            console.error("Leaflet could not be loaded.");
+        } else {
+            // STEP 1: Set the location coordinates [latitude, longitude]
+            const selectedLocation = [-29.7965, 31.0355];
+
+            // STEP 2: Create the map and set starting zoom level
+            const map = L.map("map-outreach").setView(selectedLocation, 14);
+
+            // STEP 3: Add OpenStreetMap tile layer imagery
             L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19,
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(outreachMap);
+            }).addTo(map);
 
-            L.marker(outreachLocation).addTo(outreachMap)
-                .bindPopup("<strong>Youth Outreach Centre</strong><br>Erf 1367 Isilo St, Durban North, 4051<br>Phone: +27 (0)31 555 0198");
+            // STEP 4: Add marker and popup details
+            L.marker(selectedLocation)
+                .addTo(map)
+                .bindPopup("<strong>Youth Outreach Centre</strong><br>Erf 1367 Isilo Street, Quarry Heights Dr, Durban North<br>Phone: +27 (0)31 555 0198");
         }
+    }
 
-        // Hub 3: Main Westville Center Location Map
-        const westvilleEl = document.getElementById("map-westville");
-        if (westvilleEl) {
-            const westvilleLocation = [-29.8311, 30.8852];
-            const westvilleMap = L.map("map-westville").setView(westvilleLocation, 14);
+    // --- MAP 3: Westville HQ (Main Center) ---
+    const mapWestvilleElement = document.getElementById("map-westville");
+    if (mapWestvilleElement) {
+        if (typeof L === "undefined") {
+            console.error("Leaflet could not be loaded.");
+        } else {
+            // STEP 1: Set the location coordinates [latitude, longitude]
+            const selectedLocation = [-29.8351, 30.9427];
+
+            // STEP 2: Create the map and set starting zoom level
+            const map = L.map("map-westville").setView(selectedLocation, 14);
+
+            // STEP 3: Add OpenStreetMap tile layer imagery
             L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19,
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(westvilleMap);
+            }).addTo(map);
 
-            L.marker(westvilleLocation).addTo(westvilleMap)
-                .bindPopup("<strong>Main Admin Office</strong><br>Westville, 3629<br>Mind Matters Foundation HQ");
+            // STEP 4: Add marker and popup details
+            L.marker(selectedLocation)
+                .addTo(map)
+                .bindPopup("<strong>Westville HQ (Main Center)</strong><br>Westville, Durban, 3629<br>Phone: +27 (0)31 555 0100");
         }
     }
 
